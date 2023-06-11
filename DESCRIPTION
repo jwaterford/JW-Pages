@@ -1,10 +1,10 @@
-Package: James Waterford
+Package: JWpublic
 Type: Package
 Title: James Waterford | Portfolio
 Version: 0.1.0
 Authors@R: person("James J.", "Waterford", email = "ford.water.james@gmail.com", role = c("aut","cre"))
 Maintainer: James Waterford <ford.water.james@gmail.com>
-Description: This package serves as a website to display my current or past projects. It gives me somewhere to share my work for open collaboration. :)
+Description: This package serves as a website to display my current or past projects. It gives me somewhere to share my work for open collaboration.
 License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true

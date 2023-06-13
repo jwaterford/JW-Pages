@@ -138,7 +138,7 @@ The author had included a supplementary data table with their original [article]
 With this dataset,
 
 ```{r OpenTree_load, echo=FALSE, warning=FALSE, message=FALSE}
-library(ggtree)
+#library(ggtree)
 library(ape)
 library(rotl)
 ```

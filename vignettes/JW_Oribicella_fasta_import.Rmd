@@ -1,0 +1,65 @@
+---
+title: "Orbicella Coral Fasta import"
+author: "James Waterford"
+date: "2023-06-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Transcriptomic analysis of bleached Orbicella Faveolata
+---
+Due to increasing ocean temperature, species such as coral have been experiencing higher and higher levels of bleaching. The algal symbionts that live with the coral are known to leave when temperatures persist at even a few degrees higher than the normal water temperature. Bleaching isn't always permanent, however, and there is a brief amount of time in which the algae can come back and restore life to the coral. 
+
+While we know this to be true, we still do not know specifically what mediates the survival rates of these coral. 
+
+By analyzing the full transcriptome of both the coral and its symbiont, I hope to better comprehend what genes are responsible for this difference.
+
+
+# Citation 
+
+Pinzón, Jorge H. et al. (2015), Dryad, Dataset, https://doi.org/10.5061/dryad.fj276
+
+
+The FASTA files have already been collected, so our next step is to compare the reads (sequences along the transcriptome) to the full genome.
+
+To compare to the full genome, I need a reference. NCBI, and Smithsonian Tropical Research Institute have created a full representation of the Orbicella faveolata genome.  "https://www.ncbi.nlm.nih.gov/assembly/GCF_002042975.1/"
+
+As of 2017:  30,162 out of 32,574 sequences are mapped as genes or psuedogenes.
+
+```{r}
+library(BiocManager)
+# install("Rsubread")
+```
+
+## Mapping
+
+I rely on Rsubread to map the reference genome to our samples. First, I will build an index based on the reference genome. The purpose of this index is to...
+```{r align}
+library(Rsubread)
+
+index = "GCF_002042975.1_ofav_dov_v1_genomic.fna"
+## buildindex(basename = "my_index", reference = index)
+
+treated_fasta <- "ESM2_Bleaching_Metatranscriptome_transcriptome.fasta"
+wild_fasta <- "ESM3_Bleaching_O-faveolata_transcriptome.fasta"
+
+
+## align(index = "my_index", readfile1=treated_fasta, output_file = "treatedResults.bam")
+
+```
+## featureCounts
+
+To understand the genome better, we will add an annotation that includes Gene Id and its general purpose.
+```{r featureCount}
+
+ann <- "genomic.gtf"
+
+## treatment_Count <- featureCounts("treatedResults.bam", annot.ext = ann, isGTFAnnotationFile = TRUE)
+
+```
+Mapping suggests something is wrong with my index. Not enough genes are being mapped properly. But this is a great start!
+
+

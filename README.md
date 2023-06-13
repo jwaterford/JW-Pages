@@ -17,6 +17,6 @@ Analyzing large sets of ecological data is crucial for understanding the complex
 
  - Analyzing transcriptomic data of endangered marine life (currently coral) exposed to strong environmental factors
  
- - Studying the microevolution of marine fish due to multiple strong anthropgenic selectors (oil spills, over-fishing, water temperature).
+ - Studying the microevolution of marine fish due to multiple strong anthropogenic selectors (oil spills, over-fishing, water temperature).
  
 

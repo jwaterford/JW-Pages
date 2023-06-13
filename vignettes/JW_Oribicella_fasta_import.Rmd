@@ -20,8 +20,11 @@ By analyzing the full transcriptome of both the coral and its symbiont, I hope t
 
 # Citation 
 
-Pinzón, Jorge H. et al. (2015), Dryad, Dataset, https://doi.org/10.5061/dryad.fj276
+Pinzón, Jorge H. et al. (2015), Data from: Whole transcriptome analysis..during and after bleaching in a reef-building coral, Dryad, Dataset, https://doi.org/10.5061/dryad.fj276
 
+This data set has been retrieved from the DRYAD public domain, and released by The University of Texas at Arlington, and Pennsylvania State University.
+
+# Reference Genome
 
 The FASTA files have already been collected, so our next step is to compare the reads (sequences along the transcriptome) to the full genome.
 
@@ -36,7 +39,9 @@ library(BiocManager)
 
 ## Mapping
 
-I rely on Rsubread to map the reference genome to our samples. First, I will build an index based on the reference genome. The purpose of this index is to...
+Note: Due to difficulties with this large dataset, some data processes have been removed/commented out. Specifically, the *alignment* and *featurecount* processes.
+
+I rely on Rsubread to map the reference genome to our samples. First, I will build an index based on the reference genome. The purpose of generating an index is to then compare the fasta reads to it.
 ```{r align}
 library(Rsubread)
 

@@ -99,7 +99,16 @@ this difference.</p>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
-<p>Pinzón, Jorge H. et al. (2015), Dryad, Dataset, <a href="https://doi.org/10.5061/dryad.fj276" class="external-link uri">https://doi.org/10.5061/dryad.fj276</a></p>
+<p>Pinzón, Jorge H. et al. (2015), Data from: Whole transcriptome
+analysis..during and after bleaching in a reef-building coral, Dryad,
+Dataset, <a href="https://doi.org/10.5061/dryad.fj276" class="external-link uri">https://doi.org/10.5061/dryad.fj276</a></p>
+<p>This data set has been retrieved from the DRYAD public domain, and
+released by The University of Texas at Arlington, and Pennsylvania State
+University.</p>
+</div>
+<div class="section level2">
+<h2 id="reference-genome">Reference Genome<a class="anchor" aria-label="anchor" href="#reference-genome"></a>
+</h2>
 <p>The FASTA files have already been collected, so our next step is to
 compare the reads (sequences along the transcriptome) to the full
 genome.</p>
@@ -114,9 +123,12 @@ psuedogenes.</p>
 <div class="section level3">
 <h3 id="mapping">Mapping<a class="anchor" aria-label="anchor" href="#mapping"></a>
 </h3>
+<p>Note: Due to difficulties with this large dataset, some data
+processes have been removed/commented out. Specifically, the
+<em>alignment</em> and <em>featurecount</em> processes.</p>
 <p>I rely on Rsubread to map the reference genome to our samples. First,
-I will build an index based on the reference genome. The purpose of this
-index is to…</p>
+I will build an index based on the reference genome. The purpose of
+generating an index is to then compare the fasta reads to it.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://bioconductor.org/packages/Rsubread" class="external-link">Rsubread</a></span><span class="op">)</span></span>
 <span></span>
